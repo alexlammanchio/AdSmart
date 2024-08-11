@@ -172,7 +172,7 @@ elseif (isset($_SESSION['user1'])){
 			            <?php 
 			     
 			          
-			            echo "<label>Transaction Id</label>:<b>".$tran_id."</b><br>";
+			            echo "<label>Transaction Id</label>:<b>".$tran_id."</b><br>";			           
 			            echo "<label>Card Number</label>:<b>".$card_number."</b><br>";
 			            echo "<label>Name On Card</label>:<b>".$cus_card_name."</b><br>";
 			            echo "<label style='color: Red;'>Total Amount</label>:<b>".$totalAmount+$totalAmount*0.1+$totalAmount*0.01;$totalAmount+$totalAmount*0.1+$totalAmount*0.01."</b><br>";
@@ -200,6 +200,7 @@ elseif (isset($_SESSION['user1'])){
 			            $country1= $rows['reg_country'];
 			            $reg_number = $rows['reg_number'];
 			            $price = $rows['price'];
+			            $total = $rows['total'];
 			            $item_summary = $rows['Item_summary'];
 			            $valid_day = $rows['valid_day'];
 			            $subject = $rows['subject'];
@@ -208,6 +209,8 @@ elseif (isset($_SESSION['user1'])){
 			            $delivery_time = $rows['delivery_time'];
 			            $cus_address  = $rows['cus_address'];
 			            echo "<label>Request Number</label>:<b>". $req_number."</b><br>";
+			            echo "<label>Price</label>:$ <b>".$price."</b><br>";
+			            echo "<label>Total Price</label>:$ <b>".$total."</b><br>";
 			            echo "<label>Quotation Created Date</label>:<b>". $create_date."</b><br>";
 			            echo "<label>Company Name</label>:<b>". $company_name."</b><br>";
 			            echo "<label>Subject</label>:<b>". $subject."</b><br>";
