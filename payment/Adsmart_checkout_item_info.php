@@ -110,7 +110,7 @@ elseif (isset($_SESSION['user1'])){
 			    echo "<label>Email</label>:<b>".$company_email."</b><br>";
 			    echo "<label>Contact Number</label>:<b>".$contact_number."</b><br>";
 			    echo "<label>Address</label>:<b>".$country."</b><br>";
-			    echo "<label>Price</label>:<b>".$price."</b><br>";
+			    echo "<label>Price</label>:<b> $".$price."</b><br>";
 			    echo "<label>Valid Date</label>:<b>".$valid_day."</b><br>";
 			    echo "<label>Quotation Date</label>:<b>".$quotation_date."</b><br>";
 			    echo "<label>Delivery Terms:</label>:<br>";
@@ -119,6 +119,8 @@ elseif (isset($_SESSION['user1'])){
 			    echo "</textarea><br>";
 			    echo "<label>Delivery Time</label>:<b>".$delivery_time."</b><br><br>";
 			    echo  "<p style='text-transform:none; font-size:24px; color:Blue;'>Click to download full signoff version quotation: <a href='".USER_INTERACTION."handle_download_full_signoff.php?id=".$id."' style='background:red; color:white;'>Download PDF</a></p>";
+			    
+			    
 			    echo  "<input type='hidden' value=".$req_number." name='req_number' >";
 			    echo "<input type='hidden' value=".$company_user_id." name='company_user_id' >";
 			    echo  "<input type='hidden' value=".$subject." name='item_name' >";
@@ -205,6 +207,16 @@ elseif (isset($_SESSION['user1'])){
 			$cvv = $row1['cvv'];
 			$expiration_date = $row1['expiration_date'];
 			$card_number = $row1['card_number'];
+			echo "<fieldset style='width:500px;'>";
+			echo "<label>Payment Detail:</label><br>";
+			echo "<label>Price</label>:<b> $".$price."</b><br>";
+			$service_charge =$price*0.1;
+			$total = $price*0.01+$price+$service_charge;
+			echo "<label>Service charge (10%)</label>:<b> $".$service_charge."</b><br>";
+			echo "<label>Tax (1%)</label>:<b> $".$price*0.01."</b><br>";
+			echo "<label>Total Amount</label>:<b> $".$total."</b><br>";
+			echo  "<input type='text' value=".$total." name='total' >";
+			echo "</fieldset>";
 			
 			echo"<div id='name'>";
 			echo "<label>Name On Card</label><br>";
@@ -253,28 +265,28 @@ elseif (isset($_SESSION['user1'])){
 				<br>";
 			            }
 					
-				
+			 echo          "<div>
+			            <img src='../images/Visa.png' width='60px' height='40px'>
+			            <img src='../images/mastercard.png' width='60px' height='40px' style='margin-left:30px;'>
+			            </div>";
+                                                                    
+			echo "<br>";
+			echo"<div id='cus_address'>";
+			echo "<p style ='color:black;'><b>*If the items are digital item that please input your email instead of address</b></p>";
+			echo "<label>Customer Address</label><br>";
+			echo "<input required type='text' name='cus_address' placeholder='please input your address' style='width:450px' ><br>";
+			echo "</div>";	
 					
 				
 					
 			echo "		
-			</div>
-			<div>
-				<img src='../images/Visa.png' width='60px' height='40px'>
-				<img src='../images/mastercard.png' width='60px' height='40px' style='margin-left:30px;'>
 			</div>";
 			
-			echo "<br>";
-			echo"<div id='cus_address'>";
-			echo "<p style ='color:black;'><b>*If the items are digital item that please input your email instead of address</b></p>";
-			echo "<label>Customer Address</label><br>";			
-			echo "<input required type='text' name='cus_address' placeholder='please input your address' style='width:450px' ><br>";
-			echo "</div>";	
 		
 			echo "<input type='hidden' value=".$customer_name." name='cus_user_id' >";
 			echo  "<input type='hidden' value=".$cs_email." name='email' >";
 			echo  "<input type='hidden' value=".$contact_number." name='contact_number' >";
-			
+			echo  "<input type='text' value=".$total." name='total' >";
 			echo "<input type='hidden' value='".$newTicket."' name='transaction_id' >";
 			
 			
