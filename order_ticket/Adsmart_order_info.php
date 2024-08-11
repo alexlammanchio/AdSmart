@@ -190,6 +190,7 @@ elseif (isset($_SESSION['user1'])){
 			            $country1= $rows['reg_country'];
 			            $reg_number = $rows['reg_number'];
 			            $price = $rows['price'];
+			            $total = $rows['total'];
 			            $item_summary = $rows['Item_summary'];
 			            $valid_day = $rows['valid_day'];
 			            $subject = $rows['subject'];
@@ -264,13 +265,13 @@ elseif (isset($_SESSION['user1'])){
 			    echo $delivery_terms;
 			    echo "</textarea><br>";
 			    echo "<label>Delivery Time</label>:<b>".$delivery_time."</b><br>";
-			    echo "<label>Total Price</label>:<b>$".$price."</b><br><br>";
+			    echo "<label>Total Price</label>:<b>$".$total."</b><br><br>";
 			    echo  "<p style='text-transform:none; font-size:24px; color:Blue;'>Click to download full signoff version quotation: <a href='".USER_INTERACTION."handle_download_full_signoff.php?id=".$id."' style='background:red; color:white;'>Download PDF</a></p>";
 			    echo  "<input type='hidden' value=".$req_number." name='req_number' >";
 			    echo "<input type='hidden' value=".$company_user_id." name='company_user_id' >";
 			    echo  "<input type='hidden' value=".$subject." name='item_name' >";
 			    echo  "<input type='hidden' value=".$price." name='price' >";
-			    echo  "<input type='hidden' value=".$price." name='total' >";
+			    echo  "<input type='hidden' value=".$total." name='total' >";
 			    echo  "<input type='hidden' value=".$id." name='shop_id' >";
 			    echo "<input type='hidden' value='0' name='quantity' >";
 			        }}
