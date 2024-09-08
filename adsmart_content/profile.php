@@ -223,7 +223,20 @@ elseif (isset($_SESSION['user1'])){
 	
 		
 		
-	<
+	<div class="blog" id="adsmart_new">
+       			
+       			<h1>AdSmart User Manuals</h1>
+       			
+       			
+       				<div class="blog-info">
+       					<br>       					
+       					<br>
+       					
+       					<p>If you are AdSmart beginner, You can click the "AdSmart User Manuals Button" to download AdSmart User Manuals</p>
+       					<a href="https://github.com/alexlammanchio/user-manuals/blob/main/AdSmart%20User%20Manuals.docx" class="btn" style="background:#9198e5;" target="_blank">AdSmart User Manuals</a>
+       					 
+       					</div>
+       				</div>
        
      <!------------------           AdSmart News               -->
      
@@ -251,6 +264,7 @@ elseif (isset($_SESSION['user1'])){
        			
        			
        			</div>
+       			
        			<div class="blog-post">
        				<div class="blog-img">
        					<img src="../images/blog-img2.png" >
@@ -275,6 +289,12 @@ elseif (isset($_SESSION['user1'])){
        					<a href="" class="btn" style="background:#333; width:40%; height:50px; padding-top:15px;"> See More</a>
       			
        </div>
+       
+        <!------------------           AdSmart User Manuals               -->
+     
+       
+       			
+       		
        
       
       <!--  Footer  -->  
