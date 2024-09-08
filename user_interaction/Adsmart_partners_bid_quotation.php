@@ -70,7 +70,7 @@ CASE WHEN video_ads = 1 THEN 'video_ads' ELSE video_ads END as video_ads,
 CASE WHEN native_ads = 1 THEN 'native_ads' ELSE native_ads END as native_ads,
 CASE WHEN influencer_ads = 1 THEN 'influencer_ads' ELSE influencer_ads END as influencer_ads
 from adsmart_business_partner
-where user_id = '$account_name'
+where user_id = '$account_name' 
 
 ";
     				    
@@ -125,13 +125,13 @@ where user_id = '$account_name'
                             '$telemarketing_ads','$events_adss', '$placement_ads',
                             '$display_ads', '$social_ads','$broadcast_adss', '$video_ads','$native_ads', '$influencer_ads'                                
                                     )
-                                AND (a.company_id ='0' or a.company_name = '$company_name')
+                                AND (a.company_id ='0' or a.company_name = '$company_name') 
                                 And a.deadline_date >=CURDATE() AND 
                                 a.req_number NOT IN (
                                         SELECT req_number
                                         FROM qoutation
-                                        WHERE company_id = '$company_id'
-                                     )
+                                        WHERE company_id = '$company_id' Or customer_action ='accept'
+                                     ) 
                                 GROUP BY a.req_number
                                 HAVING COUNT(*) = 1
                                         LIMIT $start, $limit;
