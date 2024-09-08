@@ -329,7 +329,7 @@
                                 End as budget_name
                                 FROM qoutation a
                                 INNER JOIN adsmart_business_partner b ON a.company_name = b.company_name                                                               
-                                Where a.company_name ='$session_id'  or a.company_id = '$shop_code' And a.deadline_date < CURDATE()
+                                Where a.company_name ='$session_id'  or a.company_id = '$shop_code' And a.deadline_date < CURDATE() and a.customer_action != 'accept'
                                 order by a.req_number asc";
     				    
     				
