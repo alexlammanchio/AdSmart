@@ -83,7 +83,8 @@ $pieJsonData2 = json_encode($pieData2);
     		<div class="col-3" style="background:#FFFFFF;">	
 				<br>
 				<br>
-				<p style="font-size:20px; font-weight:bold; ">Commission (Received)</p>
+				<p style="font-size:20px; font-weight:bold; ">Commission (Received) <a href="<?php echo ADMIN; ?>admin/business_partner_detail.php"  style="background:#00F; color:#FFF;"> Detail </a> </p>
+				
 				<br>
 				<br>
 			<hr>
@@ -91,7 +92,7 @@ $pieJsonData2 = json_encode($pieData2);
     				
     				
     				//sql query
-    				$sql = "SELECT ROUND(SUM(total) - SUM(total) / 1.15, 2) as commission FROM payment where order_status ='completed'";
+    				$sql = "SELECT ROUND((SUM(total) / 1.11)*0.1, 2) as commission FROM payment where order_status ='completed'";
     				
     				//exe query
     				$res =mysqli_query($conn, $sql);
@@ -102,7 +103,6 @@ $pieJsonData2 = json_encode($pieData2);
     				?>
     				
     				<h1><?php echo '$'.$commission; ?></h1>
-    				
     				
     			</div>    							
 			
