@@ -8,8 +8,12 @@ if(!session_id()) {
 
 define('SITEURL', 'http://localhost/adsmart/adsmart_content/');
 define('ADMIN', 'http://localhost/adsmart/');
-define('ADSMART_CUSTOMER', 'http://localhost/adsmart/adsmart_customer/');
-define('ADSMART_BUSINESS', 'http://localhost/adsmart/adsmart_business_partner/');
+define('USER_MANAGEMENT', 'http://localhost/adsmart/user_management/');
+define('USER_INTERACTION', 'http://localhost/adsmart/user_interaction/');
+define('PRODUCT_MANAGEMENT', 'http://localhost/adsmart/product_management/');
+define('REPORT_SYSTEM', 'http://localhost/adsmart/report_system/');
+define('ORDER_TICKET', 'http://localhost/adsmart/order_ticket/');
+define('PAYMENT', 'http://localhost/adsmart/payment/');
 define('IMAGES', 'http://localhost/adsmart');
 $sname= "localhost";
 $unmae= "root";
