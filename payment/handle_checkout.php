@@ -23,7 +23,7 @@ IF(isset($_POST['submit'])){
     $email = $_POST['email'];
     $contact_number=$_POST['contact_number'];
     $cus_user_id=$_POST['cus_user_id'];
-    $item_name=$_POST['item_name'];
+    $item_name= mysqli_real_escape_string($conn, $_POST['item_name']);
     
     if(isset($_POST['quantity'])){
         $quantity=$_POST['quantity'];}
