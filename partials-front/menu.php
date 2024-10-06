@@ -38,10 +38,11 @@
 				<li><a href="adsmart_qualifications.php" >AdSmart Qualifications</a></li>
 				<li><a href="showcase.php" >AdSmart Showcase</a></li>
 	            </ul>
-	          </li>
+	          </li>	          	   
+	             
 	          <li><a href="contact.php" >Contact</a></li>
-	          <li><a href="signUp.php" >Account</a></li>
-	         <li><a href="cart.php" ><i class="fas fa-shopping-cart"></i></a></li>  
+	          <li><a href="<?php echo SITEURL .'signUp.php'; ?>" >Account</a></li>
+	         <li><a href="<?php echo SITEURL . 'cart.php'; ?>" ><i class="fas fa-shopping-cart"></i></a></li>  
           
         </ul>
       </div>
