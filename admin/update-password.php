@@ -100,16 +100,16 @@ if(isset($_POST['submit'])){
                if($res2==true){
                    
                    $_SESSION['change-pwd'] = "<div class='success'>Password Change Successfully.</div>";
-                   header('location:'.SITEURL.'/admin/manage-admin.php');
+                   header('location:'.ADMIN.'/admin/manage-admin.php');
                }else{
                    
                    $_SESSION['change-pwd'] = "<div class='error'>Fail to change password.</div>";
-                   header('location:'.SITEURL.'/admin/manage-admin.php');
+                   header('location:'.ADMIN.'/admin/manage-admin.php');
                }
            }else {
                
                $_SESSION['pwd-not-match']= "<div class='error'>New Password not match.</div>";
-               header('location:'.SITEURL.'/admin/update-password.php');
+               header('location:'.ADMIN.'/admin/update-password.php');
            }
            
            
@@ -117,7 +117,7 @@ if(isset($_POST['submit'])){
        }else
        {
            $_SESSION['wrong_old_password']= "<div class='error'>Old Password is not correct.</div>";
-           header('location:'.SITEURL.'/admin/update-password.php');
+           header('location:'.ADMIN.'/admin/update-password.php');
        }
         
    }

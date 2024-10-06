@@ -42,7 +42,7 @@
     		          
     		          //redirect to manage category with session message
     		          $_SESSION['no-category-found'] = "<div class='error'> Content not found. </div>";
-    		          header('location:'.AD<OM.'admin/manage-content.php');
+    		          header('location:'.ADMIN.'admin/manage-content.php');
     		          
     		      }
     		      

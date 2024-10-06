@@ -91,13 +91,13 @@ WHERE id='$id'";
        //Create Session variable to display message
        $_SESSION['update'] = "<div class='success'>Admin Update Successfully.</div>";
        //Redirect to manage admin page
-       header('location:'.SITEURL.'admin/manage-admin.php');
+       header('location:'.ADMIN.'admin/manage-admin.php');
        
    }else {
        
        
        $_SESSION['update'] = "<div class='error'>failed to update admin. try again later.</div>";
-       header('location:'.SITEURL.'admin/manage-admin.php');
+       header('location:'.ADMIN.'admin/manage-admin.php');
    }
 }
 

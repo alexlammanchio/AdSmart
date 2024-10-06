@@ -51,7 +51,7 @@
     				
     				<?php 
     				    //select all admin
-    				    $sql ="SELECT * FROM adsmart_business_partner";
+    				    $sql ="SELECT * FROM adsmart_business_partner where apply_status != 'approve'  And apply_status !='reject'";
     				//execute the query
     				    $res = mysqli_query($conn, $sql);
     				    
@@ -88,7 +88,7 @@
                     					echo  "<input type='hidden' value=".$email." name='email' >";
        										echo  "<input type='hidden' value=".$id." name='shop_code' >";
        										?>
-                    					<button type="submit" name="reset-request-submit"  value="Change Admin Password" class="btn" style="height:50px;width:150px;font-size:25px; background:#9198e5;">Approve</button>
+                    					<button type="submit" name="reset-request-submit"  class="btn" style="height:50px;width:150px;font-size:25px; background:#9198e5;">Approve</button>
                     					</form>
                     					<form action="handle_reject_bp.php" method="POST">
                     					<?php
@@ -96,7 +96,7 @@
                     					echo  "<input type='hidden' value=".$email." name='email' >";
        										echo  "<input type='hidden' value=".$id." name='shop_code' >";
        										?>
-                    					<button type="submit" name="reset-request-submit"  value="Change Admin Password" class="btn" style="height:50px;width:150px;font-size:25px; background:red;">Reject</button>
+                    					<button type="submit" name="reset-request-submit"   class="btn" style="height:50px;width:150px;font-size:25px; background:red;">Reject</button>
                     					</form>                    						<a href="<?php echo ADMIN; ?>admin/view-bp-detail.php?id=<?php echo $id; ?>" class="btn-backend-3" style='width:200px;'>View the Content</a>
                     					</td>
                 					</tr>
@@ -115,7 +115,7 @@
     				
     				
     			</table>
-    			<a href="add-admin.php" class="btn" style="background:#9198e5; width:80%; height:50px;font-size:25px;">Add Admin</a>
+    			
 			</div>
 		</div>
 		

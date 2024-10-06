@@ -24,7 +24,7 @@ if(isset($_GET['id']) AND isset($_GET['image_name'])){
             $_SESSION['remove'] = "<div class='error'> failed to remove category image.</div>";
             
             //Redirect to manage category page
-            header('location:'.SITEURL.'admin/manage-category.php');
+            header('location:'.ADMIN.'admin/manage-category.php');
             //stop the process
             die();
             
@@ -48,7 +48,7 @@ if(isset($_GET['id']) AND isset($_GET['image_name'])){
         $_SESSION['delete'] = "<div class='success'> Category Deleted successfully. </div>";
         
         //Redirect to manage category
-        header('location:'.SITEURL.'admin/manage-category.php');
+        header('location:'.ADMIN.'admin/manage-category.php');
         
     }
     

@@ -54,6 +54,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         
         $mail->send();
         
+        $sql= "UPDATE adsmart_business_partner SET
+            apply_status = 'approve'
+            WHERE user_id='$user_id'";
+        
+        $res = mysqli_query($conn, $sql);
+        
         header('Location:'.ADMIN.'admin/manage-bp.php?sent=success');
         }
         

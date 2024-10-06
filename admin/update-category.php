@@ -42,7 +42,7 @@
     		          
     		          //redirect to manage category with session message
     		          $_SESSION['no-category-found'] = "<div class='error'> Category not found. </div>";
-    		          header('location:'.SITEURL.'admin/manage-category.php');
+    		          header('location:'.ADMIN.'admin/manage-category.php');
     		          
     		      }
     		      
@@ -50,7 +50,7 @@
     		  }else {
     		      
     		      //redirect to manage category
-    		      header('location:'.SITEURL.'admin/manage-category.php');
+    		      header('location:'.ADMIN.'admin/manage-category.php');
     		  }
     		
     		

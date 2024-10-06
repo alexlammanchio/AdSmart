@@ -49,7 +49,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         
         
         $mail->send();
-        $sql = "DELETE FROM adsmart_business_partner WHERE shop_code=$id";
+        
+        
+        $sql= "UPDATE adsmart_business_partner SET
+            apply_status = 'reject'
+            WHERE shop_code='$id'";
         $res = mysqli_query($conn, $sql);
         
         header('Location:'.ADMIN.'admin/manage-bp.php?sent=success');
